@@ -34,7 +34,7 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 85%; /* 可以根据需要调整宽度 */
+  width: 100%; /* 可以根据需要调整宽度 */
   height: auto; /* 保持高度自适应 */
 }
 .back-ground img {

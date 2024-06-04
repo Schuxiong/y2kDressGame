@@ -15,6 +15,7 @@
     </div>
 
     <div class="buttons">
+      <button @click="animateButton($event, 'background')" class="styled-button"> Background</button>
       <button @click="animateButton($event, 'makeup')" class="styled-button">Change Makeup</button>
       <button @click="animateButton($event, 'body')" class="styled-button">Change Body</button>
       <button @click="animateButton($event, 'clothes')" class="styled-button">Change Clothes</button>
@@ -25,7 +26,7 @@
       <button @click="animateButton($event, 'chains')" class="styled-button">Change Chains</button>
       <button @click="animateButton($event, 'shoes')" class="styled-button">Change Shoes</button>
       <button @click="animateButton($event, 'border')" class="styled-button">Change Border</button>
-      <button @click="takeScreenshot" class="styled-button">Take Screenshot</button>
+      <button @click="takeScreenshot" class="styled-button"> Screenshot</button>
     </div>
   </div>
 </template>
@@ -61,7 +62,7 @@ export default {
   },
   data() {
     return {
-      backgroundImages: ['background1.jpg','background2.jpg','background3.jpg','background4.jpg'],
+      backgroundImages: ['background2.jpg','background3.jpg','background4.jpg','background1.jpg',],
       makeupImages: [ 'makeup3.jpg','makeup1.jpg', 'makeup2.jpg',],
       bodyImages: ['body1.jpg'],
       clothesImages: ['clothes14.jpg','clothes15.jpg','clothes16.jpg','clothes17.jpg','clothes12.jpg','clothes13.jpg','clothes14.jpg','clothes18.jpg','clothes19.jpg','clothes20.jpg','clothes21.jpg','clothes22.jpg','clothes23.jpg','clothes1.jpg', 'clothes2.jpg', 'clothes3.jpg', 'clothes4.jpg', 'clothes5.jpg', 'clothes6.jpg', 'clothes7.jpg', 'clothes8.jpg', 'clothes9.jpg', 'clothes10.jpg', 'clothes11.jpg'],
@@ -71,7 +72,7 @@ export default {
       socksImages: ['empty.jpg','socks2.jpg','socks3.jpg','socks4.jpg','socks1.jpg'],
       chainsImages: ['chains1.jpg', 'chains2.jpg', 'chains3.jpg', 'chains4.jpg', 'chains5.jpg', 'chains6.jpg', 'chains7.jpg'],
       shoesImages: ['shoes11.jpg','shoes2.jpg', 'shoes3.jpg', 'shoes4.jpg', 'shoes5.jpg', 'shoes1.jpg',  'shoes6.jpg', 'shoes7.jpg', 'shoes8.jpg', 'shoes9.jpg', 'shoes10.jpg'],
-      borderImages: ['empty.jpg','border1.jpg'],
+      borderImages: ['border2.jpg','border3.jpg'],
       currentMakeupIndex: 0,
       currentBackgroundIndex: 0,
       currentBodyIndex: 0,
@@ -90,6 +91,9 @@ export default {
     switch (component) {
       case 'makeup':
         this.$refs.makeup.changeImage();
+        break;
+      case 'background':
+        this.$refs.background.changeImage();
         break;
       case 'body':
         this.$refs.body.changeImage();
@@ -126,6 +130,9 @@ export default {
     switch (component) {
       case 'makeup':
         this.currentMakeupIndex = newIndex;
+        break;
+      case 'background':
+        this.currentBackgroundIndex = newIndex;
         break;
       case 'body':
         this.currentBodyIndex = newIndex;
@@ -247,7 +254,7 @@ body {
   color: white;
   font-weight: bold;
   border-radius: 5px;
-  padding: 8px 16px;
+  padding: 6px 14px;
   border: none;
   font-size: 14px;
   cursor: pointer;
